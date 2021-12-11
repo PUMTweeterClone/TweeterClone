@@ -16,5 +16,23 @@
         "twitterclone195a72b2": {}
       }
     }
+  },
+  "pio": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-twitterclone-pio-05739-authRole",
+      "UnauthRoleArn": "arn:aws:iam::148924644545:role/amplify-twitterclone-pio-05739-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::148924644545:role/amplify-twitterclone-pio-05739-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-twitterclone-pio-05739-deployment",
+      "UnauthRoleName": "amplify-twitterclone-pio-05739-unauthRole",
+      "StackName": "amplify-twitterclone-pio-05739",
+      "StackId": "arn:aws:cloudformation:eu-central-1:148924644545:stack/amplify-twitterclone-pio-05739/f6f156a0-5a14-11ec-bcb0-0ad0b81f0892",
+      "AmplifyAppId": "d2939uech18qb0"
+    },
+    "categories": {
+      "auth": {
+        "twitterclone195a72b2": {}
+      }
+    }
   }
 }
