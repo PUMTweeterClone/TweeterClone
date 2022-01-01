@@ -1,9 +1,9 @@
 Twitter Clone
 APLIKACJA ZALICZENIOWA
 PROGRAMOWANIE URZĄDZEŃ MOBILNYCH
-Maciej Sokołowski
-Tomasz Jakubiak
-Piotr Radlak
+Maciej S
+Tomasz J
+Piotr R
 STRONA 1
 Opis projektu
 Projekt polega na odwzorowaniu implementacji serwisu Twitter przy użyciu
