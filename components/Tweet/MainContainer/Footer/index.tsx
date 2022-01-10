@@ -17,17 +17,17 @@ const Footer = ({ tweet }: FooterContainerProps) => {
 
   const [user, setUser] = useState(null);
   const [myLike, setMyLike] = useState(null);
-  const [likesCount, setLikesCount] = useState(tweet.likes.items.length);
+  //const [likesCount, setLikesCount] = useState(tweet.likes.items.length);
 
   useEffect(() => {
     const fetchUser = async () => {
       const currentUser = await Auth.currentAuthenticatedUser();
       setUser(currentUser);
 
-      const searchedLike = tweet.likes.items.find(
-        (like) => like.userID === currentUser.attributes.sub
-      );
-      setMyLike(searchedLike);
+      //const searchedLike = tweet.likes.items.find(
+     //   (like) => like.userID === currentUser.attributes.sub
+     // );
+      //setMyLike(searchedLike);
     }
     fetchUser();
   }, [])

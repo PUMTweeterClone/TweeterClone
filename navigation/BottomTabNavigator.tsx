@@ -110,7 +110,8 @@ function HomeNavigator() {
             <MaterialCommunityIcons name={"star-four-points-outline"} size={30} color={Colors.light.tint}/>
           ),
           headerLeft: () => (
-            <ProfilePicture size={40} image={user?.image} />
+            <ProfilePicture size={40} image={'https://cms.qz.com/wp-content/uploads/2017/03/twitter_egg_blue.png?quality=75&strip=all&w=1100&h=619'} />
+            //<ProfilePicture size={40} image={user?.image} />
           )
         }}
       />
