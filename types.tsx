@@ -1,3 +1,5 @@
+import { List } from "aws-sdk/lib/model";
+
 export type RootStackParamList = {
   Root: undefined;
   NewTweet: undefined;
@@ -18,6 +20,14 @@ export type HomeNavigatorParamList = {
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
+};
+
+export type TabThreeParamList = {
+  TabThreeScreen: undefined;
+};
+
+export type TabFourParamList = {
+  TabFourScreen: undefined;
 };
 
 export type UserType = {

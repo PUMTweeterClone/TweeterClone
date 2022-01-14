@@ -25,9 +25,9 @@ const MainContainer = ({ tweet }: MainContainerProps) => (
     </View>
     <View>
       <Text style={styles.content}>{tweet.content}</Text>
-      {!!tweet.image && <Image source={{uri: tweet.image}} />}
+      {!!tweet.image && <S3Image style={styles.image} imgKey={tweet.image} />}
     </View>
-    <Footer tweet={tweet} />
+    <Footer tweet={tweet}/>
   </View>
 )
 

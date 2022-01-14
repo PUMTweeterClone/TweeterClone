@@ -3,7 +3,8 @@ import { View, FlatList } from 'react-native';
 import { API, graphqlOperation } from 'aws-amplify';
 
 import { listTweets } from '../../src/graphql/queries';
-import Tweet from '../Tweet';
+import tweets from '../../data/tweets';
+import Tweet from '../Tweet'
 import UserFleetsList from "../UserFleetsList";
 
 const Feed = () => {

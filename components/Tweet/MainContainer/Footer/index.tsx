@@ -10,24 +10,48 @@ import { createLike, deleteLike } from '../../../../src/graphql/mutations';
 export type FooterContainerProps = {
   tweet: TweetType
 }
+/*
+const Footer = ({ tweet }: FooterContainerProps) => (
+  <View style={styles.container}>
+    <View style={styles.iconContainer}>
+      <Feather name={"message-circle"} size={20} color={'grey'} />
+      <Text style={styles.number}>{tweet.numberOfComments}</Text>
+    </View>
 
+    <View style={styles.iconContainer}>
+      <EvilIcons name={"retweet"} size={30} color={'grey'} />
+      <Text style={styles.number}>{tweet.numberOfRetweets}</Text>
+    </View>
+
+    <View style={styles.iconContainer}>
+      <AntDesign name={"hearto"} size={20} color={'gray'} />
+      <Text style={styles.number}>{tweet.numberOfLikes}</Text>
+    </View>
+
+    <View style={styles.iconContainer}>
+      <EvilIcons name={"share-google"} size={20} color={'gray'} />
+    </View>
+  </View>  
+)
+export default Footer;
+ */
 const Footer = ({ tweet }: FooterContainerProps) => {
 
   console.log(tweet);
 
   const [user, setUser] = useState(null);
   const [myLike, setMyLike] = useState(null);
-  //const [likesCount, setLikesCount] = useState(tweet.likes.items.length);
+  const [likesCount, setLikesCount] = useState(tweet.likes.items.length);
 
   useEffect(() => {
     const fetchUser = async () => {
       const currentUser = await Auth.currentAuthenticatedUser();
       setUser(currentUser);
 
-      //const searchedLike = tweet.likes.items.find(
-     //   (like) => like.userID === currentUser.attributes.sub
-     // );
-      //setMyLike(searchedLike);
+      const searchedLike = tweet.likes.items.find(
+        (like) => like.userID === currentUser.attributes.sub
+      );
+      setMyLike(searchedLike);
     }
     fetchUser();
   }, [])
@@ -91,6 +115,7 @@ const Footer = ({ tweet }: FooterContainerProps) => {
       </View>
     </View>
   )
+  
 }
 
 export default Footer;

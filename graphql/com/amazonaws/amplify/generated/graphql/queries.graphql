@@ -1,0 +1,113 @@
+# this is an auto generated file. This will be overwritten
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    username
+    name
+    email
+    image
+    tweets {
+      nextToken
+    }
+    fleets {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTweet($id: ID!) {
+  getTweet(id: $id) {
+    id
+    content
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    likes {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListTweets(
+  $filter: ModelTweetFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTweets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      content
+      image
+      userID
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetFleet($id: ID!) {
+  getFleet(id: $id) {
+    id
+    type
+    text
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListFleets(
+  $filter: ModelFleetFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFleets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      type
+      text
+      image
+      userID
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

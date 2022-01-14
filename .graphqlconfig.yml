@@ -1,15 +1,18 @@
 projects:
-  twitterclone:
-    schemaPath: src/graphql/schema.json
+  AppSyncSimpleTransform-dev:
+    schemaPath: graphql/schema.json
     includes:
-      - graphql/**/*.ts
+      - graphql/**/*.graphql
     excludes:
       - ./amplify/**
     extensions:
       amplify:
-        codeGenTarget: typescript
-        generatedFileName: API.ts
-        docsFilePath: src/graphql
+        codeGenTarget: ''
+        generatedFileName: ''
+        docsFilePath: graphql/com/amazonaws/amplify/generated/graphql
+        region: eu-central-1
+        apiId: t6foogt25ja2xbe4kqsar52upm
+        maxDepth: 2
 extensions:
   amplify:
     version: 3

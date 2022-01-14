@@ -1,17 +1,23 @@
 import {useEffect, useState} from 'react';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import {API, Auth, graphqlOperation} from 'aws-amplify';
 
+
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, HomeNavigatorParamList, TabTwoParamList } from '../types';
+import TabThreeScreen from '../screens/TabThreeScreen';
+import TabFourScreen from '../screens/TabFourScreen';
+import { BottomTabParamList, HomeNavigatorParamList, TabTwoParamList, TabThreeParamList, TabFourParamList } from '../types';
 import ProfilePicture from '../components/ProfilePicture';
 import { getUser } from '../src/graphql/queries';
+import LogOut from "../screens/LogOut"
+import { Button } from 'react-native';
+
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -41,14 +47,14 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Notifications"
-        component={TabTwoNavigator}
+        component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-notifications-outline" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Messages"
-        component={TabTwoNavigator}
+        component={TabFourNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-mail" color={color} />,
         }}
@@ -97,6 +103,7 @@ function HomeNavigator() {
         name="HomeScreen"
         component={HomeScreen}
         options={{
+          headerTitleAlign: "center",
           headerRightContainerStyle: {
             marginRight: 15,
           },
@@ -104,14 +111,19 @@ function HomeNavigator() {
             marginLeft: 15,
           },
           headerTitle: () => (
-            <Ionicons name={"logo-twitter"} size={30} color={Colors.light.tint}/>
+            <Ionicons  name={"logo-twitter"} size={30} color={Colors.light.tint}/>
           ),
+      
           headerRight: () => (
-            <MaterialCommunityIcons name={"star-four-points-outline"} size={30} color={Colors.light.tint}/>
+            <LogOut/>
+            //<MaterialCommunityIcons name={"star-four-points-outline"} size={30} color={Colors.light.tint}/>
+            //<FontAwesome.Button name="twitter" backgroundColor="#1da1f2" onPress={() => LogOut()}>
+           // LogOut
+           // </FontAwesome.Button>
           ),
           headerLeft: () => (
-            <ProfilePicture size={40} image={'https://cms.qz.com/wp-content/uploads/2017/03/twitter_egg_blue.png?quality=75&strip=all&w=1100&h=619'} />
-            //<ProfilePicture size={40} image={user?.image} />
+            //<ProfilePicture size={40} image={'https://cms.qz.com/wp-content/uploads/2017/03/twitter_egg_blue.png?quality=75&strip=all&w=1100&h=619'} />
+            <ProfilePicture  size={40} image={user?.image} />
           )
         }}
       />
@@ -132,3 +144,35 @@ function TabTwoNavigator() {
     </TabTwoStack.Navigator>
   );
 }
+
+const TabThreeStack = createStackNavigator<TabThreeParamList>();
+
+function TabThreeNavigator() {
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen
+        name="TabThreeScreen"
+        component={TabThreeScreen}
+        options={{ headerTitle: 'Tab Three Title' }}
+      />
+    </TabThreeStack.Navigator>
+  );
+}
+
+const TabFourStack = createStackNavigator<TabFourParamList>();
+
+function TabFourNavigator() {
+  return (
+    <TabFourStack.Navigator>
+      <TabFourStack.Screen
+        name="TabFourScreen"
+        component={TabFourScreen}
+        options={{ headerTitle: 'Tab Four Title' }}
+      />
+    </TabFourStack.Navigator>
+  );
+}
+function SignOut(): void {
+  throw new Error('Function not implemented.');
+}
+

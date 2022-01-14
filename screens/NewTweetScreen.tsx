@@ -11,6 +11,7 @@ import { API, graphqlOperation, Auth, Storage } from 'aws-amplify';
 import { useNavigation } from '@react-navigation/native';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
+import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -70,7 +71,7 @@ export default function NewTweetScreen() {
       const key = `${uuidv4()}.${extension}`;
 
       await Storage.put(key, blob);
-
+      console.log(key);
       return key;
 
     } catch (e) {
@@ -111,7 +112,7 @@ export default function NewTweetScreen() {
         </TouchableOpacity>
       </View>
       <View style={styles.newTweetContainer}>
-        <ProfilePicture image={'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77'}/>
+        <ProfilePicture image={'https://cms.qz.com/wp-content/uploads/2017/03/twitter_egg_blue.png?quality=75&strip=all&w=1100&h=619'}/>
         <View style={styles.inputsContainer}>
           <TextInput
             value={tweet}

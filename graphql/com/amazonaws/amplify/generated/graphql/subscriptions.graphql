@@ -1,0 +1,256 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser {
+  onCreateUser {
+    id
+    username
+    name
+    email
+    image
+    tweets {
+      nextToken
+    }
+    fleets {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    username
+    name
+    email
+    image
+    tweets {
+      nextToken
+    }
+    fleets {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    username
+    name
+    email
+    image
+    tweets {
+      nextToken
+    }
+    fleets {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateTweet {
+  onCreateTweet {
+    id
+    content
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    likes {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTweet {
+  onUpdateTweet {
+    id
+    content
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    likes {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTweet {
+  onDeleteTweet {
+    id
+    content
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    likes {
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateFleet {
+  onCreateFleet {
+    id
+    type
+    text
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateFleet {
+  onUpdateFleet {
+    id
+    type
+    text
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteFleet {
+  onDeleteFleet {
+    id
+    type
+    text
+    image
+    userID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateLike {
+  onCreateLike {
+    id
+    userID
+    tweetID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    tweet {
+      id
+      content
+      image
+      userID
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateLike {
+  onUpdateLike {
+    id
+    userID
+    tweetID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    tweet {
+      id
+      content
+      image
+      userID
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteLike {
+  onDeleteLike {
+    id
+    userID
+    tweetID
+    user {
+      id
+      username
+      name
+      email
+      image
+      createdAt
+      updatedAt
+    }
+    tweet {
+      id
+      content
+      image
+      userID
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
